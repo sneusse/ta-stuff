@@ -135,18 +135,7 @@ M.enclose = function(left, right)
 end
 
 M.unenclose = function(left, right)
-  for i = 0, buffer.selections - 1, 1 do
-    local s, e = buffer.selection_n_start[i], buffer.selection_n_end[i]
-    
-    buffer:set_target_range(s,e)
-
-    local txt = left..buffer.target_text..right
-    buffer:replace_target(txt)
---    buffer.selection_n_start[i] = buffer.selection_n_start[i] - #left
-    if s ~= e then
-      buffer.selection_n_end[i] = buffer.selection_n_start[i] + #txt
-    end
-  end
+  -- move along, nothing to see here yet.
 end
 
 M.char_right = function()
