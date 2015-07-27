@@ -33,8 +33,8 @@ end
 local keys = _G.keys
 local editing = _G.textadept.editing
 
-
-buffer.multi_paste = buffer.MULTIPASTE_EACH
+-- no clue how to fix the weird multi_paste behavoiour yet :>
+--buffer.multi_paste = buffer.MULTIPASTE_EACH
 
 
 local M = {}
