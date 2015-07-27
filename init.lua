@@ -1,5 +1,5 @@
 -- additional modules
-	
+  
 local multiedit = require'multiedit'
 local textredux = require'textredux'
 
@@ -11,16 +11,16 @@ textredux.hijack()
 
 local last_dir = nil
 local snapopen_woot = function()
-	local directory = io.get_project_root() or (buffer.filename and buffer.filename:match('^(.+)[/\\]')) or last_dir or _USERHOME
+  local directory = io.get_project_root() or (buffer.filename and buffer.filename:match('^(.+)[/\\]')) or last_dir or _USERHOME
   last_dir = directory
-	textredux.fs.snapopen(directory, filter, exclude_FILTER)
+  textredux.fs.snapopen(directory, filter, exclude_FILTER)
 end
 
 local print = function(...)
-	local tmp = ui.SILENT_PRINT
-	ui.SILENT_PRINT = true
-	ui.print(...)
-	ui.SILENT_PRINT = tmp
+  local tmp = ui.SILENT_PRINT
+  ui.SILENT_PRINT = true
+  ui.print(...)
+  ui.SILENT_PRINT = tmp
 end
 
 -- parameters
@@ -31,14 +31,14 @@ editing.AUTOCOMPLETE_ALL = true
 -- events
 
 events.connect(events.LEXER_LOADED, function(lang)
-	buffer.tab_width = 4
-	buffer.use_tabs = true
-	buffer.auto_c_ignore_case = true
-	editing.AUTOCOMPLETE_ALL = true
+  buffer.tab_width = 4
+  buffer.use_tabs = true
+  buffer.auto_c_ignore_case = true
+  editing.AUTOCOMPLETE_ALL = true
 end)
 
 events.connect(events.DOUBLE_CLICK, function(lang)
-	editing.highlight_word()
+  editing.highlight_word()
 end)
 
 -- keys
